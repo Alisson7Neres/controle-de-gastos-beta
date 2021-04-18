@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login</title>
+	<style>
+		h3{
+			position: relative;
+			left: 37%;
+			top: 50px;
+			width:  100%;
+		}
+
+	</style>
+	
+	    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+	<div class="container" style="width: 700px;">
+		<h3>Login</h3>
+	<form th:action="@{usuarioLogado}" class="input-feild col s12" style="margin: 100px 0;" method="POST">
+		
+		<div class="row" style="position: relative; left: 25%;">
+			<div class="input-field col s6">
+				<label for="email">Email</label>
+				<input type="text" id="email" name="email" class="validate">
+			</div>
+		</div>
+		
+		<div class="row" style="position: relative; left: 25%;">
+			<div class="input-field col s6">
+				<label for="senha">Senha</label>
+				<input type="password" name="senha" id="senha" class="validate>"
+			</div>
+		</div>
+		<button style="position: relative; top: 100px; left: -350px;" class="btn" type="submit">Logar</button>
+	</form>
+	
+	</div>
+</body>
+
+</html>
