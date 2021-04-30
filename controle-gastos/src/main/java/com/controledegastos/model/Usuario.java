@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.sun.istack.NotNull;
+
+
+
 @Entity
 public class Usuario {
 
@@ -15,9 +19,11 @@ public class Usuario {
 	private String nome;
 	
 	private String sobrenome;
-	
+
+	@NotNull
 	private String email;
 	
+	@NotNull
 	private String senha;
 
 	public Long getId() {
@@ -59,6 +65,5 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
 	
 }

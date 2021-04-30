@@ -1,8 +1,10 @@
 package com.controledegastos.controler;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.annotation.ObjectPostProcessor;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +21,8 @@ public class GastosController {
 	
 	@Autowired
 	UsuarioRepository repository;
+	
+	Usuario usuario;
 	
 	@PostMapping("**/salvarUsuario")
 	public ModelAndView enviar( Usuario usuario) {
@@ -37,18 +41,15 @@ public class GastosController {
 	}
 	
 	@PostMapping("/usuarioLogado")
-	public ModelAndView logado(Usuario usuario,@RequestParam ("email") String email,@RequestParam("senha") String senha) {
-		ModelAndView andView = new ModelAndView("/usuarioLogado");
+	public String logado(Usuario usuario,@RequestParam ("email") String email,@RequestParam("senha") String senha) throws Exception {
 		
-		Optional<Usuario> usuarioLogado = repository.findById(usuario.getId());
-	
+		Usuario usuarioLogado = repository.findByLogin(usuario.getEmail(), usuario.getSenha());
+		
+		// Verifica o email e a senha, se for autenticado será redirecionado
 		if(usuarioLogado != null) {
-		 usuarioLogado = Optional.of((Usuario) repository.findByLogin(email, senha));
-			return andView;
+			return "usuarioLogado";
 		}
-		else {
-			System.out.println("ERROUR");
-		}
-		return andView;
+		
+		return "usuarioLogado";
 	}
 }

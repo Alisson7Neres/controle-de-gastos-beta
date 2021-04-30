@@ -1,7 +1,5 @@
 package com.controledegastos.repository;
 
-import java.util.List;
-
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.Query;
@@ -15,5 +13,5 @@ import com.controledegastos.model.Usuario;
 public interface UsuarioRepository extends CrudRepository<Usuario, Long>{
 	
 	@Query("select u from Usuario u where u.email = ?1 and u.senha = ?2")
-	List<Usuario> findByLogin(String email, String senha);
+	Usuario findByLogin(String email, String senha);
 }

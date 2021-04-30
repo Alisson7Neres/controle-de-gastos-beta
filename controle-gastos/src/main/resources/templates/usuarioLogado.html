@@ -18,13 +18,110 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body style="background-color: silver;">
-	<div class="container" style="width: 700px;">
-		<h3>Logou</h3>
+<body>
 
+	<div class="container" style="width: 700px;">
+		<h3></h3>
+		<br/><br/><br/>
+		
+		<div class="row">
+			<div class="input-field col s12">
+			<i class="material-icons prefix">attach_money</i>
+			<label style="color:black; font-weight: bolder;" 
+			for="salarioBase">Salário base</label>
+			<input id="salarioBase" name="salarioBase" type="number">
+			</div>
+		</div>
+		
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">wb_incandescent</i>
+					<label for="luz">Luz</label>
+					<input id="luz" name="luz" class="validate" type="number">
+				</div>
+			
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">grain</i>
+					<label for="agua">Água</label>
+					<input id="agua" name="agua" class="validate" type="number">
+				</div>
+			</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">wifi</i>
+					<label for="internet">Internet</label>
+					<input id="internet" name="internet" class="validate" type="number">
+				</div>
+			
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">phone</i>
+					<label for="telefone">Telefone</label>
+					<input id="telefone" name="telefone" class="validate" type="number">
+				</div>
+			</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">directions_car</i>
+					<label for="carro">Carro</label>
+					<input id="carro" name="carro" class="validate" type="number">
+				</div>
+			
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">directions_bike</i>
+					<label for="moto">Moto</label>
+					<input id="moto" name="moto" class="validate" type="number">
+				</div>
+			</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">assignment</i>
+					<label for="iptu">IPTU</label>
+					<input id="iptu" name="iptu" class="validate" type="number">
+				</div>
+			
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">assignment</i>
+					<label for="ipva">IPVA</label>
+					<input id="ipva" name="ipva" class="validate" type="number">
+				</div>
+			</div>
+			</div>
+			
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">assignment</i>
+					<label for="aluguel">Aluguel</label>
+					<input id="aluguel" name="aluguel" class="validate" type="number">
+				</div>
+			
+			<div class="row">
+				<div class="input-field col s6">
+					<i class="material-icons prefix">assignment</i>
+					<label for="cartao">Cartão</label>
+					<input id="cartao" name="cartao" class="validate" type="number">
+				</div>
+			</div>
+			</div>
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+<script>
+	$('input[name="salarioBase"]').mask('99.999,99');
+</script>
 </body>
+
 
 </html>
